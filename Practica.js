@@ -17,9 +17,9 @@ function Cantar (shakirasong){ return shakirasong }
 // recibe un parametro que es un array de numeros y retorna la suma del total de los numeros
 // (utilizar foreach para recorrer el array) 
 
-const autosuma = function (arrayNums) => {
+const autosuma = function (arrayNums) {
     let suma = 0;
-    arrayNums.forEach ((num) => {
+    arrayNums.forEach((num) => {
         suma += num;
     })
     return suma;
@@ -46,7 +46,7 @@ const inscribirAlumno = function (arrayAlumnos, nombre){
 // y un nombre a buscar, y diga si encuentra el nombre en la lista. 
 
 const buscador = function (arrayNomAlumns, nombre) {
-   if arrayAlumnos.find(nombre){
+   if (arrayAlumns.find(nombre)){
     return console.log(nombre)
 }
 }
@@ -54,12 +54,44 @@ const buscador = function (arrayNomAlumns, nombre) {
 // Ejercicio 02 / Callbacks 
 
 // 1) Definir una funcion que se llame Calculadora, que reciba un array de numeros, y una callback. 
-
 // A) Pasarle por argumento una funcion arrow que realice la suma de los elementos del array. 
-
-// B) Pasarle por argumento una funcion arrow que realice la resta de los elementos del array. 
-
+// B) Pasarle por argumento una funcion arrow que realice la resta de los elementos del array.
 // C) Pasarle por argumento una funcion arrow que realice la multiplicacion de los elementos. 
+
+const nuevoArray = [1,2,3,4,5,6];
+
+const calculadora = (arrayNumeros, callback) => {
+    return callback(arrayNumeros);
+};
+
+const sumaArray = (array) => {
+    let suma = 0;
+    array.forEach ((numeros) => {
+        suma += numeros;
+    })
+    return suma;
+}
+
+const restaArray = (array) => {
+    let resta = 0;
+    array.forEach ((numeros) => {
+        resta -= numeros;
+    })
+    return resta;
+}
+
+const multiplicarArray = (array) => {
+    let multiplicar = 1;
+    array.forEach ((numeros) => {
+        multiplicar *= numeros;
+    })
+    return multiplicar;
+}
+
+console.log(calculadora(nuevoArray, sumaArray));
+console.log(calculadora(nuevoArray, restaArray));
+console.log(calculadora(nuevoArray, multiplicarArray));
+
 
 // 2) Definir una funcion llamada agregarSiEstaEntreCeroYDiez, que reciba un numero, y un array, la funcion debe validar si el numero es mayor o igual a cero y menor o igual a 10, en caso favorable, debe agregarlo en la primera posicion del array, caso contrario debe arrojar un error informando que el numero es mayor o menor a lo establecido. Debe retornar el array con el resultado. 
 
